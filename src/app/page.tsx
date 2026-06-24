@@ -1,3 +1,7 @@
 export default function HomePage() {
-  return <div>conteudo</div>
+  return (
+    <div>
+      <h1>contetudo</h1>
+    </div>
+  );
 }
