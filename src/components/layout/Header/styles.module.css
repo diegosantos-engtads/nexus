@@ -1,3 +1,9 @@
-.teste {
-  background: red;
+.header {
+  background: #234;
+  display: flex;
+}
+
+.headerInner img {
+  width: auto;
+  height: auto;
 }
