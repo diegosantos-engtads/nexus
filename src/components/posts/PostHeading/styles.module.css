@@ -1,0 +1,8 @@
+.titleHeading {
+  color: #234;
+  transition: ease 0.2s;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

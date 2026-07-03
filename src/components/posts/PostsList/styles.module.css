@@ -1,0 +1,30 @@
+.sectionList {
+  display: grid;
+  gap: 1rem;
+  margin: 60px auto;
+}
+@media (width >= 48rem) {
+  .sectionList {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (width >= 80rem) {
+  .sectionList {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.articleList {
+  background-color: #fafafa;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.divList {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.divList:hover .group {
+  transform: scale(1.05);
+}
