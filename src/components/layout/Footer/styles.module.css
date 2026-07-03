@@ -1,3 +1,7 @@
 .footer {
   background: #234;
 }
+.footerInner img {
+  width: auto;
+  height: auto;
+}
