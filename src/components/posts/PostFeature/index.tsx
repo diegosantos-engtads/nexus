@@ -24,11 +24,10 @@ export const PostFeature = async () => {
             width: 1200,
             height: 720,
             priority: true,
-            loading: 'eager',
           }}
           className={styles.group}
         />
-        <PostSummary post={post} />
+        <PostSummary post={post} tagH='h1' />
       </section>
     </div>
   )

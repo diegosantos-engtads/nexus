@@ -19,8 +19,7 @@ export const PostsList = async () => {
                 title: post.title,
                 width: 1200,
                 height: 720,
-                priority: true,
-                loading: 'eager',
+                loading: 'lazy',
               }}
               className={styles.group}
             />

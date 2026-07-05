@@ -1,3 +1,4 @@
+import { PostDate } from '../PostDate'
 import { PostHeading } from '../PostHeading'
 import styles from './styles.module.css'
 
@@ -22,7 +23,7 @@ export const PostSummary = ({
   return (
     <div className={`${styles.heroContent} ${className}`}>
       <small>
-        {post.author} | {post.createdAt}
+        {post.author} | <PostDate dateTime={post.createdAt} />
       </small>
       <PostHeading as={tagH} url={`/post/${post.slug}`}>
         {post.title}
