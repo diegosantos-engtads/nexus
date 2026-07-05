@@ -11,6 +11,7 @@ export const Header = () => {
           width={120}
           height={80}
           priority
+          loading='eager'
           className='m-auto my-3'
         />
       </div>
