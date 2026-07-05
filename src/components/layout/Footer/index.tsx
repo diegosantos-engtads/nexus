@@ -10,7 +10,7 @@ export const Footer = () => {
           alt='Logo Nexus'
           width={120}
           height={120}
-          loading='lazy'
+          loading='eager'
           className='m-4'
         />
       </div>

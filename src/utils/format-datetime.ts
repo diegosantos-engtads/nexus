@@ -1,7 +1,7 @@
 import { format, formatDistanceToNow } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
 
-export const getFormattedDate = (getDate: string) => {
+export const getFormattedDate = (getDate: string): string => {
   const date = new Date(getDate)
   const dateNow = new Date()
   const diffiInMs = dateNow.getTime() - date.getTime()
@@ -12,10 +12,10 @@ export const getFormattedDate = (getDate: string) => {
     : formatDateTime(getDate)
 }
 
-export const formatRelativeDate = (getDate: string) => {
+export const formatRelativeDate = (getDate: string): string => {
   return formatDistanceToNow(getDate, { locale: ptBR, addSuffix: true })
 }
 
-const formatDateTime = (getDate: string) => {
+const formatDateTime = (getDate: string): string => {
   return format(getDate, "dd/MM/yyy 'às' HH'h'mm")
 }

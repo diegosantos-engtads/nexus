@@ -9,8 +9,7 @@ export const Header = () => {
           src='/images/logo.png'
           alt='Logo Nexus'
           width={120}
-          height={80}
-          priority
+          height={120}
           loading='eager'
           className='m-auto my-3'
         />
