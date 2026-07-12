@@ -3,7 +3,7 @@ import { readFile } from 'fs/promises'
 import { resolve } from 'path'
 import type { PostRepository } from './post-repository'
 
-const SIMULATE_WAIT_IN_MS = 5000
+const SIMULATE_WAIT_IN_MS = 500
 
 const ROOT_DIR = process.cwd()
 const JSON_POSTS_FILE_PATH = resolve(
@@ -25,15 +25,18 @@ export class JsonPostRepository implements PostRepository {
     if (SIMULATE_WAIT_IN_MS <= 0) return
     await new Promise(resolve => setTimeout(resolve, SIMULATE_WAIT_IN_MS))
   }
-  async findAll(): Promise<PostModel[]> {
+  async findAllPublic(): Promise<PostModel[]> {
     await this.simulateWait()
     const posts = await this.readFromDisk()
-    return posts
+    console.log('findAllPuclic')
+    return posts.filter(posts => posts.published)
   }
-  async findById(id: string): Promise<PostModel> {
-    const posts = await this.findAll()
-    const post = posts.find(post => post.id === id)
-    if (!post) throw new Error('Post ID Não Encontrado')
-    return post
+  async findById(id: string): Promise<PostModel | null> {
+    const posts = await this.findAllPublic()
+    return posts.find(post => post.id === id) ?? null
+  }
+  async findBySlug(slug: string): Promise<PostModel | null> {
+    const posts = await this.findAllPublic()
+    return posts.find(post => post.slug === slug) ?? null
   }
 }
