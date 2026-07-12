@@ -1,10 +1,10 @@
-import { postRepository } from '@/repositories/post'
+import { findAllPublicPostsCached } from '@/lib/post/queries'
 import { PostCoverImage } from '../PostCoverImage'
 import { PostSummary } from '../PostSummary'
 import styles from './styles.module.css'
 
 export const PostFeature = async () => {
-  const posts = await postRepository.findAll()
+  const posts = await findAllPublicPostsCached()
 
   const post = posts.find(post => post.coverImageUrl)
 
@@ -23,7 +23,7 @@ export const PostFeature = async () => {
             title: post.title,
             width: 1200,
             height: 720,
-            priority: true,
+            loading: 'eager',
           }}
           className={styles.group}
         />

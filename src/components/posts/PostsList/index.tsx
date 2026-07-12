@@ -1,10 +1,10 @@
-import { postRepository } from '@/repositories/post'
+import { findAllPublicPostsCached } from '@/lib/post/queries'
 import { PostCoverImage } from '../PostCoverImage'
 import { PostSummary } from '../PostSummary'
 import styles from './styles.module.css'
 
 export const PostsList = async () => {
-  const posts = await postRepository.findAll()
+  const posts = await findAllPublicPostsCached()
 
   return (
     <section className={`${styles.sectionList} container`}>
