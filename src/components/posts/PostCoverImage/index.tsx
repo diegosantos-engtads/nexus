@@ -4,7 +4,7 @@ import styles from './styles.module.css'
 
 type PostCoverImageProps = {
   imageProps: React.ComponentProps<typeof Image>
-  linkProps: React.ComponentProps<typeof Link>
+  linkProps?: React.ComponentProps<typeof Link>
   className?: string
 }
 
@@ -13,7 +13,7 @@ export const PostCoverImage = async ({
   linkProps,
   className,
 }: PostCoverImageProps) => {
-  return (
+  return linkProps ? (
     <Link
       {...linkProps}
       className={`${styles.linkInner} ${linkProps.className}`}
@@ -24,5 +24,11 @@ export const PostCoverImage = async ({
         className={`${styles.coverImage} ${imageProps.className} ${className}`}
       />
     </Link>
+  ) : (
+    <Image
+      {...imageProps}
+      alt={imageProps.alt}
+      className={`${styles.coverImage} ${imageProps.className} ${className}`}
+    />
   )
 }

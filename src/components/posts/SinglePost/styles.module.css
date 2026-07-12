@@ -1,0 +1,19 @@
+.articleSinglePost {
+  background-color: #fafafa;
+  display: flow-root;
+}
+.sectionSinglePost {
+  margin: 30px auto 10px;
+}
+.singleCoverImage {
+  border-radius: 1rem;
+  margin: 10px 0;
+}
+
+.singleSummary a,
+.singleSummary a:hover {
+  cursor: auto;
+  transition: none;
+  opacity: initial;
+  background: none;
+}
