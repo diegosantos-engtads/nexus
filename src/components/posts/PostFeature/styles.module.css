@@ -1,29 +1,31 @@
 .heroContainer {
-  background-color: #ffffff;
   display: flow-root;
+  background-color: var(--nexus-surface-background);
+  border-bottom: 1px solid var(--nexus-border);
 }
 
 .hero {
   display: grid;
-  flex-direction: column;
-  padding: 2rem;
-  margin: 30px auto;
-  gap: 0.4rem;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 auto;
+  padding-block: 2rem;
 }
+
+.hero:hover .group {
+  transform: scale(1.04);
+}
+
 @media (width >= 48rem) {
   .hero {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-}
-@media (width >= 80rem) {
-  .hero {
-    gap: 1.6rem;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 1.5rem;
+    padding-block: 3rem;
   }
 }
 
-/* Group to scale image {css of property} */
-.hero:hover .group {
-  transform: scale(1.05);
+@media (width >= 80rem) {
+  .hero {
+    gap: 2rem;
+  }
 }

@@ -1,19 +1,29 @@
 .articleSinglePost {
-  background-color: #fafafa;
   display: flow-root;
+  background-color: var(--nexus-surface-background);
+  border-bottom: 1px solid var(--nexus-border);
 }
+
 .sectionSinglePost {
-  margin: 30px auto 10px;
+  margin: 0 auto;
+  padding-block: 2rem;
 }
+
 .singleCoverImage {
+  margin-bottom: 1.5rem;
   border-radius: 1rem;
-  margin: 10px 0;
+  box-shadow: var(--nexus-shadow-soft);
+}
+
+.singleSummary {
+  margin-inline: auto;
 }
 
 .singleSummary a,
 .singleSummary a:hover {
-  cursor: auto;
-  transition: none;
-  opacity: initial;
+  color: var(--nexus-heading);
+  cursor: default;
   background: none;
+  opacity: 1;
+  transition: none;
 }

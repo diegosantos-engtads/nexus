@@ -1,14 +1,29 @@
 .titleHeading {
-  color: #234;
-  background-image: linear-gradient(currentColor, currentColor);
+  color: var(--nexus-heading);
+  background-image: linear-gradient(
+    var(--nexus-brand-gold),
+    var(--nexus-brand-gold)
+  );
   background-repeat: no-repeat;
   background-position: left bottom;
-  background-size: 0% 1px;
-  transition: background-size 0.3s ease;
-  opacity: 0.9;
-  padding: 1px 0;
+  background-size: 0 2px;
+  opacity: 0.92;
+  padding-block: 0.0625rem;
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease,
+    background-size 0.3s ease;
 }
+
 .titleHeading:hover {
-  background-size: 100% 1px;
+  color: var(--nexus-link);
+  background-size: 100% 2px;
   opacity: 1;
+}
+
+.titleHeading:focus-visible {
+  color: var(--nexus-link);
+  outline: 2px solid var(--nexus-focus-ring);
+  outline-offset: 4px;
+  border-radius: 0.125rem;
 }

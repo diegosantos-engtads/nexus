@@ -1,3 +1,4 @@
 .dateTime {
-  color: #234;
+  color: var(--nexus-text-muted);
+  font-weight: 500;
 }
