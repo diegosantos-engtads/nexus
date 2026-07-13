@@ -2,6 +2,7 @@ import { findPostBySlugCached } from '@/lib/post/queries'
 import { notFound } from 'next/navigation'
 import { PostCoverImage } from '../PostCoverImage'
 import { PostSummary } from '../PostSummary'
+import { SafeMarkdown } from '../SafeMarkdown'
 import styles from './styles.module.css'
 
 type SinglePostProps = {
@@ -41,20 +42,7 @@ export const SinglePost = async ({ slug }: SinglePostProps) => {
           />
         </section>
       </div>
-      <section className='container'>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus
-          tenetur fugit expedita nostrum vitae asperiores eius quibusdam
-          provident libero consectetur accusamus odio ad dolorem id quisquam
-          excepturi, minus maiores unde?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus
-          tenetur fugit expedita nostrum vitae asperiores eius quibusdam
-          provident libero consectetur accusamus odio ad dolorem id quisquam
-          excepturi, minus maiores unde?
-        </p>
-      </section>
+      <SafeMarkdown markdown={post.content} />
     </article>
   )
 }

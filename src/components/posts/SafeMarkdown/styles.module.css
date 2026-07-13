@@ -1,0 +1,9 @@
+.sectionMarkdown {
+  margin-block: 3rem 4rem;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+  color: var(--nexus-text-primary);
+  background-color: var(--nexus-surface-background);
+  border: 1px solid var(--nexus-border);
+  border-radius: 1rem;
+  box-shadow: var(--nexus-shadow-soft);
+}
