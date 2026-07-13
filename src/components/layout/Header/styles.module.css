@@ -1,9 +1,28 @@
 .header {
-  background: #234;
-  display: flex;
+  background-color: var(--nexus-brand-surface);
+  border-bottom: 1px solid var(--nexus-brand-gold-strong);
 }
 
-.headerInner img {
-  width: auto;
+.headerInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 6rem;
+  gap: 1rem;
+}
+
+.logoLink {
+  display: inline-flex;
+  flex-shrink: 0;
+  border-radius: 0.5rem;
+}
+
+.logoLink:focus-visible {
+  outline: 2px solid var(--nexus-focus-ring);
+  outline-offset: 4px;
+}
+
+.logo {
+  width: clamp(9rem, 22vw, 12rem);
   height: auto;
 }

@@ -1,13 +1,15 @@
 import { Footer } from '@/components/layout/Footer'
-
 import { Header } from '@/components/layout/Header'
+import { ThemeProvider } from '@/providers/theme/theme-provider'
 import type { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
 import './globals.css'
+import styles from './layout.module.css'
 
 const roboto = Roboto({
   variable: '--font-roboto',
   subsets: ['latin'],
+  display: 'swap',
 })
 
 export const metadata: Metadata = {
@@ -24,11 +26,15 @@ type RootLayoutProps = {
 
 const RootLayout = ({ children }: Readonly<RootLayoutProps>) => {
   return (
-    <html lang='pt-BR' className={roboto.variable}>
-      <body className='grid grid-rows-[auto_1fr_auto] min-h-screen w-full'>
-        <Header />
-        <main className='bg-slate-100'>{children}</main>
-        <Footer />
+    <html lang='pt-BR' suppressHydrationWarning>
+      <body className={`${roboto.variable} ${styles.body}`}>
+        <ThemeProvider>
+          <Header />
+
+          <main className={styles.main}>{children}</main>
+
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   )

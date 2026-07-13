@@ -3,52 +3,206 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+
+  /* Brand colors */
+  --nexus-brand-navy: #223344;
+  --nexus-brand-navy-deep: #172433;
+
+  --nexus-brand-gold: #d3a644;
+  --nexus-brand-gold-strong: #b58328;
+  --nexus-brand-gold-light: #efcd74;
+
+  /* Page and surfaces */
+  --nexus-page-background: #f4f6f8;
+  --nexus-surface-background: #ffffff;
+  --nexus-surface-muted: #eef2f5;
+  --nexus-surface-hover: #e7edf2;
+
+  /* Text */
+  --nexus-text-primary: #17212b;
+  --nexus-text-secondary: #52606d;
+  --nexus-text-muted: #6b7785;
+  --nexus-heading: var(--nexus-brand-navy);
+
+  /* Borders and interactions */
+  --nexus-border: #d7dee5;
+  --nexus-link: #8a6416;
+  --nexus-link-hover: #6f4e0e;
+  --nexus-focus-ring: var(--nexus-brand-gold);
+
+  /* Code and Markdown */
+  --nexus-code-background: #e9eef2;
+  --nexus-code-text: #223344;
+
+  /* Header, Footer and branded surfaces */
+  --nexus-brand-surface: var(--nexus-brand-navy);
+  --nexus-on-brand: #f8fafc;
+  --nexus-on-brand-muted: #dbe3ea;
+
+  /* Text selection */
+  --nexus-selection-background: rgb(211 166 68 / 38%);
+  --nexus-selection-text: #17212b;
+
+  /* Shadows */
+  --nexus-shadow-soft: 0 0.5rem 1.5rem rgb(34 51 68 / 8%);
+  --nexus-shadow-hover: 0 0.75rem 2rem rgb(34 51 68 / 14%);
+
+  /* Fonts */
+  --nexus-font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
 }
 
 .dark {
-  --background: #09090b;
-  --foreground: #fafafa;
+  color-scheme: dark;
+
+  /* Page and surfaces */
+  --nexus-page-background: #0b1118;
+  --nexus-surface-background: #111a24;
+  --nexus-surface-muted: #182431;
+  --nexus-surface-hover: #1f2d3a;
+
+  /* Text */
+  --nexus-text-primary: #eef2f6;
+  --nexus-text-secondary: #bac4ce;
+  --nexus-text-muted: #8e9aa7;
+  --nexus-heading: #f8fafc;
+
+  /* Borders and interactions */
+  --nexus-border: #2b3948;
+  --nexus-link: #e3bf63;
+  --nexus-link-hover: #f0d58f;
+  --nexus-focus-ring: var(--nexus-brand-gold);
+
+  /* Code and Markdown */
+  --nexus-code-background: #080d13;
+  --nexus-code-text: #e8edf2;
+
+  /* Header, Footer and branded surfaces */
+  --nexus-brand-surface: var(--nexus-brand-navy-deep);
+
+  /* Shadows */
+  --nexus-shadow-soft: 0 0.5rem 1.5rem rgb(0 0 0 / 24%);
+  --nexus-shadow-hover: 0 0.75rem 2rem rgb(0 0 0 / 34%);
+
+  /* Text selection */
+  --nexus-selection-background: rgb(211 166 68 / 42%);
+  --nexus-selection-text: #f8fafc;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-page: var(--nexus-page-background);
+  --color-surface: var(--nexus-surface-background);
+  --color-surface-muted: var(--nexus-surface-muted);
+  --color-surface-hover: var(--nexus-surface-hover);
+
+  --color-content: var(--nexus-text-primary);
+  --color-content-secondary: var(--nexus-text-secondary);
+  --color-content-muted: var(--nexus-text-muted);
+  --color-heading: var(--nexus-heading);
+
+  --color-outline: var(--nexus-border);
+  --color-link: var(--nexus-link);
+  --color-link-hover: var(--nexus-link-hover);
+  --color-focus: var(--nexus-focus-ring);
+
+  --color-code: var(--nexus-code-background);
+  --color-code-content: var(--nexus-code-text);
+
+  --color-brand-surface: var(--nexus-brand-surface);
+  --color-on-brand: var(--nexus-on-brand);
+  --color-on-brand-muted: var(--nexus-on-brand-muted);
+
+  --color-brand-navy: var(--nexus-brand-navy);
+  --color-brand-gold: var(--nexus-brand-gold);
+  --color-brand-gold-strong: var(--nexus-brand-gold-strong);
+  --color-brand-gold-light: var(--nexus-brand-gold-light);
+
+  --font-sans: var(--font-roboto);
+  --font-mono: var(--nexus-font-mono);
+}
+
+/* Basic reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--nexus-page-background);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-  transition:
-    background-color 0.3s ease,
-    color 1.3s ease;
+  min-width: 20rem;
+  margin: 0;
+  background-color: var(--nexus-page-background);
+  color: var(--nexus-text-primary);
+  font-family: var(--font-roboto), Arial, Helvetica, sans-serif;
+  line-height: 1.5;
 }
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background-color: var(--nexus-selection-background);
+  color: var(--nexus-selection-text);
+}
+
+/* Shared layout container */
+
 .container {
   width: 100%;
-  padding: 0 1rem;
   margin: 0 auto;
+  padding-inline: 1rem;
 
-  @media (width >= 40rem /* 640px */) {
-    max-width: 40rem /* 640px */;
+  @media (width >= 40rem) {
+    max-width: 40rem;
   }
-  @media (width >= 48rem /* 768px */) {
-    max-width: 48rem /* 768px */;
+
+  @media (width >= 48rem) {
+    max-width: 48rem;
   }
-  @media (width >= 64rem /* 1024px */) {
-    max-width: 72rem /* 1152px */;
+
+  @media (width >= 64rem) {
+    max-width: 72rem;
   }
+}
+
+/* Global heading defaults */
+
+h1,
+h2,
+h3 {
+  color: var(--nexus-heading);
+  line-height: 1.2;
 }
 
 h1 {
-  font-size: clamp(1rem, calc(1rem + 1.5vw), 2rem);
-  font-weight: 600;
+  font-size: clamp(1.5rem, calc(1rem + 1.5vw), 2rem);
+  font-weight: 700;
 }
 
 h2 {
-  font-size: clamp(0.8rem, calc(0.8rem + 1.5vw), 1.35rem);
-  font-weight: 600;
+  font-size: clamp(1.2rem, calc(0.8rem + 1.5vw), 1.35rem);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: clamp(1.05rem, calc(0.8rem + 1vw), 1.2rem);
+  font-weight: 700;
 }

@@ -1,0 +1,11 @@
+.body {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.main {
+  min-width: 0;
+  background-color: var(--nexus-page-background);
+}
